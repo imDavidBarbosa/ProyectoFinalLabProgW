@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+/*ESTILOS GENERALES*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: white;
+}
+
+.backtopm {
+    height: 100px;
+    width: 100%;
+}
+/*ESTILOS ENCABEZADO Y NAV BAR*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    padding: 40px 100px;
+    z-index: 3;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background-color: white;
+}
+
+header.sticky ul li a {
+    color:  black;
+}
+
+header .logo {
+    position: relative;
+    height: 80px;
+    transition: 0.6s; 
+}
+
+header div.toggle_btn img {
+    cursor: pointer;
+}
+/* NEW MENU */
+nav {
+    position: relative;
+    display: flex;
+}
+
+nav a {
+    position: relative;
+    margin: 0 20px;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav i {
+    position: relative;
+    margin: 0 20px;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.optionsmenu {
+    position: relative;
+    display: flex;
+}
+
+nav #marker {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(-135deg, #f7006a, #9b59b6);
+    bottom: -8px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.socialmedia {
+    position: relative;
+    display: flex;
+}
+
+nav #marker_social {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(-135deg, #4b0aa3, #ff759d);
+    bottom: -8px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+/*ESTILOS DE SECCIONES*/
+.sec1 {
+    color: white;
+    min-height: 100vh;
+}
+
+.sec2 {
+    color: white;
+    min-height: 50vh;
+}
+
+.sec3 {
+    color: white;
+    min-height: 91vh;
+    overflow: hidden;
+}
+
+.secp {
+    color: white;
+    min-height: 91vh;
+    overflow: auto;
+}
+
+.secdash {
+    height: auto;
+    min-height: 91vh;
+    color: black;
+}
+
+#txt {
+    width: 64%;
+    margin-top: 6rem;
+    position: absolute;
+    padding: 0 6.5%;
+    float: left;
+    text-align: center;
+}
+
+#txt h3 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+#txt h4 {
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.par {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+}
+
+/*ESTILOS NEON*/
+    /*Letrero*/
+.contenedor {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor h2 {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+    padding: 15px 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.contenedor h2.active {
+    transition-delay: 1.5s;
+    color: black;
+    box-shadow: 0 0 10px #fc64b4,
+    0 0 20px #fc64b4,
+    0 0 40px #fc64b4,
+    0 0 80px #fc64b4,
+    0 0 160px #fc64b4;
+}
+
+.contenedor h2 span {
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor h2:nth-child(2) {
+    filter: hue-rotate(80deg);
+}
+
+.contenedor h2::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #fc64b4;
+    box-shadow: 5px -8px 0 #fc64b4, 5px 8px 0 #fc64b4;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.contenedor h2.active::before {
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    box-shadow: 5px 0 0 #fc64b4, 5px 0 0 #fc64b4;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+} 
+
+.contenedor h2::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #fc64b4;
+    box-shadow: -5px -8px 0 #fc64b4, -5px 8px 0 #fc64b4;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.contenedor h2.active::after {
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    box-shadow: -5px 0 0 #fc64b4, -5px 0 0 #fc64b4;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+} 
+
+    /*Tubos Neón*/
+.contNeonTxt {
+    margin-top: -80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+h2.neonTube {
+    position: relative;
+    font-size: 4em;
+    letter-spacing: 15px;
+    color: #0e3742;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0007);
+    line-height: 0.7em;
+    outline: none;
+    animation: neon 5s linear infinite;
+}
+@keyframes neon {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #260258;
+        text-shadow: none;
+    }
+
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: white;
+        text-shadow: 0 0 10px #ff00d8,
+            0 0 20px #ff00d8,
+            0 0 40px #ff00d8,
+            0 0 80px #ff00d8,
+            0 0 160px #ff00d8;
+    }
+}
+
+/* INFO */
+.info {
+    display: block;
+    color: black;
+}
+
+.info .marca {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+}
+
+.marca p {
+    text-align: justify;
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 5px;
+    margin: 0 80px;
+}
+
+.marca img {
+    width: 700px;
+}
+
+.marca img#jafra {
+    float: left;
+    margin: 0 80px;
+}
+
+.marca img#yvesrocher {
+    float: right;
+    margin: 0 80px;
+}
+
+/*ESTILOS PIE DE PÁGINA*/
+footer {
+    position: sticky;
+    top: 100%;
+    width: 100%;
+    color: black;
+    background: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+a.topventas {
+    text-decoration: none;
+    color: black;
+}
+
+a.topventas p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

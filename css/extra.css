@@ -1,0 +1,19 @@
+
+/*CARRUSEL DE BANDAS*/
+.hero {
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+.hero .carousel {
+    width: 300px;
+    margin: 100px auto 0;
+    overflow: visible;
+}
+
+.carousel img {
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0007);
+}
+

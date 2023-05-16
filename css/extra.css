@@ -8,7 +8,15 @@
     padding: 10px;
 }
 
-.portada .container {
+.contactform {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.portada.contactform .container {
     margin-top: 100px;
 }
 

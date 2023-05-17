@@ -19,6 +19,10 @@
         $_SESSION['rol'] = implode("", $rol); //Guardar el rol en array de SESSION
         switch($_SESSION['rol']) { // Switch para redireccionar según sea el rol
             case 1: // Admin
+                $cal = "SELECT iduser FROM usuarios WHERE correo = '$correo'";
+                $consulta = mysqli_query($conexion,$cal);
+                $userid = mysqli_fetch_row($consulta);
+                $_SESSION['userid'] = implode("", $userid);
                 header("Location: ../admin/dashboardadmin.php");
                 break;
             case 2: // Cliente

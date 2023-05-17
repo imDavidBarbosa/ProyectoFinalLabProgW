@@ -3,7 +3,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Pedidos</title>
+        <title>Reportes</title>
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
         <script type="text/javascript" src="../../script/emergentes.js"></script>
     </head>

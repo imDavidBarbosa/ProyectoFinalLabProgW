@@ -1,0 +1,77 @@
+.centrar {
+    text-align: center;
+}
+
+.enlace-destino {
+    background-color: #4CAF50;
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enlace-destino:hover {
+    background-color: #3e8e41;
+}
+
+.tabladis {
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.tabladis th, .tabladis td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabladis td {
+    height: 55px;
+}
+
+.tabladis th {
+    background-color: rgb(187, 143, 206);
+    color: white;
+}
+
+.tabladis tr td a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+.tabladis tr td a:hover {
+    font-size: 25px;
+    color: #d53a9d;
+}
+
+#contenido {
+    position: relative;
+    top: 180px;
+    margin: 0 200px;
+}
+
+#contenid {
+    position: relative;
+    top: 40px;
+    margin: 0 20px;
+}
+
+#fondo-desenfocado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    backdrop-filter: blur(5px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(5px); /* Desenfoque del fondo en Safari */
+}

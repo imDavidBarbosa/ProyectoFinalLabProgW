@@ -1,0 +1,74 @@
+form {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f7f7f7;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+div.tagcontain {
+	display: inline-block;
+	width: 160px;
+}
+
+label.tags {
+	display: contents;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+input[type="text"], input[type="correo"],input[type="tel"], input[type="password"] {
+	display: block;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: "Century Gothic", sans-serif;
+	font-size: 15px;
+		}
+
+input[type="submit"] {
+	background-color: rgb(187, 143, 206);
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: "Century Gothic", sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+input[type="submit"]:hover {
+	background-color: #a770a3;
+}
+
+input[type="submit"]:active {
+	background-color: purple;
+	transform: translateY(1px);
+}
+
+select {
+	display: block;
+	background-color: white;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: "Century Gothic", sans-serif;
+	font-size: 15px;
+}
+
+form {
+    font-family: "Century Gothic", sans-serif;
+    background-color: #d9c0d8;
+}

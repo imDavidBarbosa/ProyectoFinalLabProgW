@@ -1,6 +1,10 @@
 <?php 
     session_start();
     include("../topmenu.php");
+    
+    if(isset($_SESSION['rol'])) {
+        include('modal.php');
+    }
 ?>
 
 <?php

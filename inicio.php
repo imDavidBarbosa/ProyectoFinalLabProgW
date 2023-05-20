@@ -1,6 +1,10 @@
 <?php 
     session_start();
     include("topmenu.php");
+
+    if(isset($_SESSION['rol'])) {
+        include('pages/modal.php');
+    }
 ?>
     <section class="portada"> <!-- Sección de la imagen de portada -->
         <h1>Lighting Up Your Life</h1> <!-- Título -->

@@ -1,0 +1,39 @@
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #4b0aa3;
+  border-radius: 1000px;
+  background-color: white;
+}
+
+button:hover {
+  background-color: #ffafda;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(0.25rem) var(#ffafda);
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.button-container .form-control {
+  max-width: 30px;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 5px;
+  border: unset;
+}
+
+.button-container .form-control:focus {
+  outline : none;
+}
+

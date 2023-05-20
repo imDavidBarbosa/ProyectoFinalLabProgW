@@ -48,3 +48,19 @@ item2.forEach(link => {
     })
 })
 
+// LINKS DE LOS ICONOS
+function shoppingCart() {
+    var sPath = window.location.pathname;
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+    if(sPage == "inicio.php") {
+        window.location.href = "pages/cliente/carrito.php";
+    } else if (sPage == "dashboardcliente.php") {
+        window.location.href = "carrito.php";
+    } else {
+        window.location.href = "cliente/carrito.php";
+    }
+}
+
+function whatsapp() {
+    window.location.href = "#";
+}

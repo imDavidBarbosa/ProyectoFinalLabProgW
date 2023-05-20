@@ -13,18 +13,26 @@
             echo '<link rel="stylesheet" href="css/extra.css">';
             echo '<link rel="stylesheet" href="css/toast.css">';
             echo '<link rel="stylesheet" href="css/jquery.flipster.min.css">';
+            if(isset($_SESSION['rol'])) {
+                echo '<link rel="stylesheet" href="css/modal.css">';
+            }
         } else if($ap != "inicio.php" && isset($_SESSION['rol'])) {
             echo '<link rel="stylesheet" href="../css/general.css">';
             echo '<link rel="stylesheet" href="../css/portadas.css">';
             echo '<link rel="stylesheet" href="../css/media.css">';
             echo '<link rel="stylesheet" href="../css/extra.css">';
+            echo '<link rel="stylesheet" href="../css/toastnb.css">';
+            echo '<link rel="stylesheet" href="../css/estilosBotCarro.css">';
             echo '<link rel="stylesheet" href="../css/jquery.flipster.min.css">';
+            echo '<link rel="stylesheet" href="../css/modal.css">';
         } else {
             echo '<link rel="stylesheet" href="../css/general.css">';
             echo '<link rel="stylesheet" href="../css/portadas.css">';
             echo '<link rel="stylesheet" href="../css/media.css">';
             echo '<link rel="stylesheet" href="../css/extra.css">';
             echo '<link rel="stylesheet" href="../css/toast.css">';
+            echo '<link rel="stylesheet" href="../css/toastnb.css">';
+            echo '<link rel="stylesheet" href="../css/estilosBotCarro.css">';
             echo '<link rel="stylesheet" href="../css/jquery.flipster.min.css">';
         }
     ?>

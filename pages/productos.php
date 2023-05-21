@@ -12,7 +12,11 @@
             overflow-x: hidden;
         }
     </style>
-
+    <script>
+        function overview(id) {
+            window.location.href = "overview.php?idprod=" + id;
+        }
+    </script>
 
     <section class="sec3">
         <div class="backtopm"></div>
@@ -86,7 +90,7 @@
                     echo "<img src='../media/img/productos/$img'>";
                     echo "<ul class='action'>";
                     echo "<li><button type='submit'><i class='fa-solid fa-cart-shopping'></i></button><span>Añadir al carrito</span></li>";
-                    echo "<li><i class='fa-solid fa-eye'></i><span>Ver producto</span></li>";
+                    echo "<li onclick='overview($id)'><i class='fa-solid fa-eye'></i><span>Ver producto</span></li>";
                     echo "</ul>";
                     echo "</div>";
                     echo "<div class='pcontent'>";
@@ -136,7 +140,7 @@
                     echo "<div class='imgBx'>";
                     echo "<img src='../media/img/productos/$img'>";
                     echo "<ul class='action'>";
-                    echo "<li><i class='fa-solid fa-eye'></i><span>Ver producto</span></li>";
+                    echo "<li onclick='overview($id)'><i class='fa-solid fa-eye'></i><span>Ver producto</span></li>";
                     echo "<li><button type='submit'><i class='fa-solid fa-cart-shopping'></i></button><span>Añadir al carrito</span></li>";
                     echo "</ul>";
                     echo "</div>";

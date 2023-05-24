@@ -73,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Realizar pedido</button>
+        <button type="button" class="btn btn-primary" onclick="buy()">Realizar pedido</button>
       </div>
     </div>
   </div>

@@ -64,3 +64,7 @@ function shoppingCart() {
 function whatsapp() {
     window.location.href = "#";
 }
+
+function buy() {
+    window.location.href ="procesos/buy.php";
+}

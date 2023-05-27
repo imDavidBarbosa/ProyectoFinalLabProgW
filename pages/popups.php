@@ -29,9 +29,19 @@
             case "pe": 
               echo '<title>Eliminar Producto</title>';
               break;
+
+            case "detalles":
+              echo '<title>Productos del Pedido</title>';
+              break;
           }
 
           switch($t)  {
+            case "detalles":
+              echo '<link rel="stylesheet" href="admin/css/estilos.css">';
+              echo '<link rel="stylesheet" href="../css/media.css">';
+              echo '<script type="text/javascript" src="../script/emergentes.js"></script>';
+              break;
+
             default:
               echo '<link rel="stylesheet" type="text/css" href="admin/css/estilos.css">';
               echo '<link rel="stylesheet" href="admin/css/estiloform.css">';
@@ -346,6 +356,39 @@
               // Cerramos la conexión
               mysqli_close($conexion);
               break;
+
+              case "detalles": 
+                $idventa = $_GET['id'];
+  
+                // Ejecutar la consulta SQL
+                $sql = "SELECT * FROM ventas_detalles WHERE idventa = $idventa";
+                $resultado = mysqli_query($conexion, $sql);
+        
+                // Crear la tabla HTML y mostrar los datos
+                echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Detalles del Pedido</font></center></h1>";
+                echo "<table class='tabladis'>";
+                echo "<tr>
+                    <th>ID Venta</th>
+                    <th>ID Producto</th>
+                    <th>Nombre del producto</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>";
+                while ($fila = mysqli_fetch_assoc($resultado)) {
+                    echo "<tr>";
+                    echo "<td>" . $fila['idventa'] . "</td>";
+                    echo "<td>" . $fila['idproducto'] . "</td>";
+                    echo "<td>" . $fila['nombre_prod'] . "</td>";
+                    echo "<td>" . $fila['cantidad_prod'] . "</td>";
+                    echo "<td>" . $fila['total'] . "</td>";
+                    ?>
+                    <?php
+                }
+                echo "</table>";
+                // Cerrar la conexión a la base de datos
+                mysqli_close($conexion);
+                break;
+  
           }
         ?>
         </div> 

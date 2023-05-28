@@ -41,7 +41,7 @@
                     </a>
                 </td>
                 <td>
-                    <a onclick="openPopup(); return false;">
+                    <a href="../popups.php?id=<?php echo $fila['idventa'];?>&type=actestado" onclick="openPopup(); return false;">
                     <i class="fa-solid fa-pen-to-square"></i></i>
                     </a>
                 </td>

@@ -33,6 +33,10 @@
             case "detalles":
               echo '<title>Productos del Pedido</title>';
               break;
+
+            case "actestado":
+              echo '<title>Actualizar Estatus</title>';
+              break;
           }
 
           switch($t)  {
@@ -388,7 +392,52 @@
                 // Cerrar la conexión a la base de datos
                 mysqli_close($conexion);
                 break;
-  
+
+                case "actestado": 
+                  $idventa = $_GET['id'];
+                  $sql = "SELECT fecha, nombre_com, idestatus FROM ventas INNER JOIN usuarios ON ventas.idcliente = usuarios.iduser WHERE idventa = $idventa";
+                  $resultado = mysqli_query($conexion, $sql);
+          
+                  $fila=mysqli_fetch_array($resultado);
+                  
+                  $fecha = $fila['fecha'];
+                  $cliente = $fila['nombre_com'];
+                  $estatus = $fila['idestatus'];
+          
+                  // Título Formulario
+                  echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Actualizar Estatus</font></center></h1>";
+                  
+                  echo "<form action='admin/procesos/guardaractualizarestado.php' method='post'>";
+                  echo "<input type='hidden' id='id' value='$idventa' name='idventa'>";
+                  echo "<label for='nombre'>Fecha de Venta:</label>";
+                  echo "<input type='text' id='nombre' value='$fecha' readonly='readonly'>";
+          
+                  echo "<label for='usuario'>Nombre del Cliente:</label>";
+                  echo "<input type='text' id='usuario' value='$cliente' readonly='readonly'>";
+    
+                  echo "<label for='estatus'>Estatus:</label>";
+                  echo "<select name='estatus' id='estatus'>";
+                  if($estatus == 1){
+                      echo"<option value='1' selected='selected'>Pedido</option>";
+                      echo"<option value='2'>En camino</option>";
+                      echo"<option value='3'>Entregado</option>";
+                  } else if ($estatus == 2){
+                      echo"<option value='1'>Pedido</option>";
+                      echo"<option value='2' selected='selected'>En camino</option>";
+                      echo"<option value='3'>Entregado</option>";
+                  } else {
+                      echo"<option value='1'>Pedido</option>";
+                      echo"<option value='2'>En camino</option>";
+                      echo"<option value='3' selected='selected'>Entregado</option>";
+                  }
+                  echo "</select>";
+          
+                  echo "<input type='submit' value='Enviar'>";
+                  echo "</form>";
+                  // Cerramos la conexión
+                  mysqli_close($conexion);
+                  break;
+
           }
         ?>
         </div> 

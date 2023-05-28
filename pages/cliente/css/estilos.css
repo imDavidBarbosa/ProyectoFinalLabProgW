@@ -1,0 +1,167 @@
+.centrar {
+    text-align: center;
+}
+
+.enlace-destino {
+    background-color: #4CAF50;
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enlace-destino:hover {
+    background-color: #3e8e41;
+}
+
+.tabladis {
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.tabladis th, .tabladis td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabladis td {
+    height: 55px;
+}
+
+.tabladis th {
+    background-color: rgb(94, 8, 131);
+    color: white;
+}
+
+.tabladis tr td a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+.tabladis tr td a:hover {
+    font-size: 25px;
+    color: #d53a9d;
+}
+
+#contenido {
+    position: relative;
+    top: 180px;
+    margin: 0 200px;
+}
+
+#contenid {
+    position: relative;
+    margin: 15px;
+}
+
+#fondo-desenfocado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    backdrop-filter: blur(5px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(5px); /* Desenfoque del fondo en Safari */
+}
+
+table.tabladis tr td.viewclass i{
+    cursor: pointer;
+}
+
+.tabladis.userdash {
+    table-layout: fixed;
+    margin: auto;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+form.vSel {
+    display: flex;
+    width: 500px;
+    margin: auto;
+    padding: 0 95px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+form.vSel button.selector {
+    width: 120px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+form.vSel button.selector.on {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.advAdd {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.formAdd {
+    margin: 30px 0;
+    padding-bottom: 30px;
+    width: 1000px;
+}
+
+.formAdd .button input {
+    width: 200px;
+}
+
+.input-box select {
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;  
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-box select:focus {
+    border-color: #9b59b6;
+}
+
+.input-box select:valid {
+    border-color: #9b59b6;
+
+}
+
+form .input-box label.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.hr {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}

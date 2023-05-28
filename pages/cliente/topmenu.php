@@ -34,7 +34,7 @@
                 <a href="../../inicio.php">Inicio</a>
                 <a href="../productos.php">Productos</a>
                 <a href="../cont.php">Contacto</a>
-                <a href="dashboardcliente.php?view=a">Cuenta</a>
+                <a href="dashboardcliente.php?view=p">Cuenta</a>
                 <a href="../procesos/logout.php">Cerrar Sesión</a>
             </div>
             <div class="socialmedia">

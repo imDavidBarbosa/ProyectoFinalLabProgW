@@ -6,6 +6,10 @@
           session_start();
           $t = $_GET['type'];
           switch($t)  {
+            case "a":
+              echo '<title>Productos Pedidos</title>';
+              break;
+              
             case "ui":
               echo '<title>Insertar Usuario</title>';
               break;
@@ -40,6 +44,13 @@
           }
 
           switch($t)  {
+            case "a":
+              echo '<link rel="stylesheet" href="../css/modal.css">';
+              echo '<link rel="stylesheet" type="text/css" href="cliente/css/estilos.css">';
+              echo '<link rel="stylesheet" href="../css/media.css">';
+              echo '<script type="text/javascript" src="../script/emergentes.js"></script>';
+              break;
+              
             case "detalles":
               echo '<link rel="stylesheet" href="admin/css/estilos.css">';
               echo '<link rel="stylesheet" href="../css/media.css">';
@@ -59,6 +70,34 @@
         <?php 
           require("../database/connection.php");
           switch($t) {
+            case "a":
+              $total = 0;
+              echo "<h2>Productos Pedidos</h2>";
+              echo "<hr class='hr'>";
+              echo "<table class='carrito'>";
+              $sql10 = ("SELECT nombre_prod, nomb_marca, cantidad_prod, total, img FROM (ventas_detalles INNER JOIN productos ON ventas_detalles.idproducto = productos.id) INNER JOIN marca ON productos.idmarca = marca.idmarca WHERE idventa = $_GET[id]");
+              $query10 = mysqli_query($conexion, $sql10);
+              while ($fila = mysqli_fetch_assoc($query10)) {
+                echo "<tr>";
+                echo "<td><img src='../media/img/productos/$fila[img]' widht=100px height=100px></td>";
+                echo "<td style='width: 140px;'>$fila[nombre_prod]</td>";
+                echo "<td>$fila[nomb_marca]</td>";
+                echo "<td>$fila[cantidad_prod]</td>";
+                echo "<td>$$fila[total].00</td>";
+                $total += $fila['total'];
+                echo "</tr>";
+              }
+              echo "<tr class='lastrow'>";
+              echo "<td></td>";
+              echo "<td></td>";
+              echo "<td></td>";
+              echo "<td class='total'>TOTAL</td>";
+              echo "<td class='total'><b>$$total.00</b></td>";
+              echo "<td></td>";
+              echo "</tr>";
+              echo "</table>";
+              break;
+              
             case "ui":
               echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Insertar Usuarios</font></center></h1>";
  

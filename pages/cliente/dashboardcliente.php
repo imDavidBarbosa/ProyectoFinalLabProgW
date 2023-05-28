@@ -38,7 +38,7 @@
                         echo "<td>" . $fila['fecha'] . "</td>";
                         echo "<td>" . $fila['descestatus'] . "</td>";?>
                         <td class="viewclass">
-                            <a onclick="openPopup(); return false;">
+                            <a href="../popups.php?id=<?php echo $fila['idventa'];?>&type=a" onclick="openPopup(); return false;">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
                         </td>

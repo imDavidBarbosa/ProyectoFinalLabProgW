@@ -46,6 +46,50 @@
                         echo "</tr>";
                     }
                     echo "</table>";    
+                }else {
+                    $sql = "SELECT iduser FROM direcciones WHERE iduser = $_SESSION[userid]";
+                    $resultado = mysqli_query($conexion, $sql);
+                    $userdirec =  mysqli_fetch_row($resultado);
+                    if(!($userdirec == "")) {
+                        $usertrue = implode("", $userdirec);
+                    } else {
+                        $usertrue = $userdirec;
+                    }
+                    if ($usertrue == $_SESSION['userid']) {
+                        echo "<table class='tabladis userdash'>";
+                        echo "<tr>
+                        <th>Calle</th>
+                        <th>Número Exterior</th>
+                        <th>Número Interior</th>
+                        <th>Colonia</th>
+                        <th>Municipio</th>
+                        <th>Editar</th>
+                        </tr>";
+                        $sql2 = "SELECT * FROM direcciones WHERE iduser = $_SESSION[userid]";
+                        $resultado2 = mysqli_query($conexion, $sql2);
+                        while ($fila = mysqli_fetch_assoc($resultado2)) {
+                            if($fila['numint'] == "") {
+                                $numint = "N/A";
+                            } else {
+                                $numint = $fila['numint'];
+                            }
+                            echo "<tr>";
+                            echo "<td>" . $fila['calle'] . "</td>";
+                            echo "<td>" . $fila['numext'] . "</td>";
+                            echo "<td>" . $numint . "</td>";
+                            echo "<td>" . $fila['colonia'] . "</td>";
+                            echo "<td>" . $fila['municipio'] . "</td>";?>
+                            <td class="viewclass">
+                                <a onclick="openPopup(); return false;">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <?php
+                            echo "</tr>";
+                        }
+                        echo "</table>"; 
+                    }
+    
                 }
                 mysqli_close($conexion);
                 ?>

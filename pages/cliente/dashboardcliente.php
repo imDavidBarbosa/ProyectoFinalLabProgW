@@ -88,6 +88,45 @@
                             echo "</tr>";
                         }
                         echo "</table>"; 
+                    }else {
+                        echo "<center>";
+                        echo "<p class='advAdd'>No tienes una dirección, por favor agrega una</p>";
+                        echo '<form class="formAdd" action="saveadd.php" method="post">';
+                        echo '<div class="user-details address">';
+                        echo '<div class="input-box">';
+                        echo '<span class="details">Calle</span>';
+                        echo '<input type="text" name="calle" required>';
+                        echo '</div>';
+                        echo '<div class="input-box">';
+                        echo '<span class="details">Número Exterior</span>';
+                        echo '<input  type="text" name="numext" required>';
+                        echo '</div>';
+                        echo '<div class="input-box">';
+                        echo '<span class="details">Número Interior</span>';
+                        echo '<input class="empty" type="text" name="numint" >';
+                        echo '</div>';
+                        echo '<div class="input-box">';
+                        echo '<label class="details" for="col">Marca:</label>';
+                        echo "<select name='col' id='col'>";
+                        echo "<option value='Misión de Fundadores'>Misión de Fundadores</option>";
+                        echo "<option value='Valle de San Andrés'>Valle de San Andrés</option>";
+                        echo "<option value='Real de San Andrés'>Real de San Andrés</option>";
+                        echo "<option value='Jardínes de San Andrés'>Jardínes de San Andrés</option>";
+                        echo "<option value='Metroplex I'>Metroplex I</option>";
+                        echo "<option value='Metroplex II'>Metroplex II</option>";
+                        echo "<option value='Ebanos 4to Sector'>Ebanos 4to Sector</option>";
+                        echo '</select>';
+                        echo '</div>';
+                        echo '<div class="input-box">';
+                        echo '<span class="details">Municipio</span>';
+                        echo '<input type="text" name="mun" value="Apodaca" required readonly="readonly">';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class="button">';
+                        echo '<input type="submit" value="Guardar">';
+                        echo '</div>';
+                        echo '</form>';
+                        echo "</center>";
                     }
     
                 }

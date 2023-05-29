@@ -9,7 +9,11 @@
             case "a":
               echo '<title>Productos Pedidos</title>';
               break;
-              
+            
+            case "b":
+              echo '<title>Editar Dirección</title>';
+              break;
+
             case "ui":
               echo '<title>Insertar Usuario</title>';
               break;
@@ -50,7 +54,14 @@
               echo '<link rel="stylesheet" href="../css/media.css">';
               echo '<script type="text/javascript" src="../script/emergentes.js"></script>';
               break;
-              
+
+            case "b":
+                echo '<link rel="stylesheet" href="cliente/css/estiloform.css">';
+                echo '<link rel="stylesheet" type="text/css" href="cliente/css/estilos.css">';
+                echo '<link rel="stylesheet" href="../css/media.css">';
+                echo '<script type="text/javascript" src="../script/emergentes.js"></script>';
+                break;
+
             case "detalles":
               echo '<link rel="stylesheet" href="admin/css/estilos.css">';
               echo '<link rel="stylesheet" href="../css/media.css">';
@@ -97,7 +108,36 @@
               echo "</tr>";
               echo "</table>";
               break;
-              
+
+            case "b":
+                echo "<h2>Editar Dirección</h2>";
+                echo "<hr class='hr'>";
+    
+                $sql2 = "SELECT * FROM direcciones WHERE iduser = $_SESSION[userid]";
+                $resultado2 = mysqli_query($conexion, $sql2);
+    
+                while ($fila = mysqli_fetch_array($resultado2)) {   
+                  echo "<form action='cliente/saveeditadd.php' method='post'>";   
+                  echo "<label for='nombre'>Calle:</label>";
+                  echo "<input type='text' id='nombre' value='$fila[calle]' name='calle'>";
+          
+                  echo "<label for='usuario'>Número Exterior:</label>";
+                  echo "<input type='text' id='usuario' value='$fila[numext]' name='numext'>";
+          
+                  echo "<label for='correo'>Número Interior:</label>";
+                  echo "<input type='correo' id='correo' value='$fila[numint]' name='numint'>";
+          
+                  echo "<label for='telefono'>Colonia:</label>";
+                  echo "<input type='tel' id='telefono' value='$fila[colonia]' name='col'>";
+          
+                  echo "<label for='rol'>Municipio:</label>";
+                  echo "<input type='text' id='rol' value='$fila[municipio]' name='mun'>";
+          
+                  echo "<input type='submit' value='Actualizar'>";
+                  echo "</form>";
+                }
+                break;  
+                 
             case "ui":
               echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Insertar Usuarios</font></center></h1>";
  

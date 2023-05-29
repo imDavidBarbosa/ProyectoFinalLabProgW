@@ -80,7 +80,7 @@
                             echo "<td>" . $fila['colonia'] . "</td>";
                             echo "<td>" . $fila['municipio'] . "</td>";?>
                             <td class="viewclass">
-                                <a onclick="openPopup(); return false;">
+                                <a href="../popups.php?id=<?php echo $fila['iduser'];?>&type=b" onclick="openPopup(); return false;">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>

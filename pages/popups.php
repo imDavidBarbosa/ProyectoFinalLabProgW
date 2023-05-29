@@ -468,6 +468,31 @@
                     <?php
                 }
                 echo "</table>";
+                $sqldir = "SELECT DISTINCT calle, numext, numint, colonia, municipio FROM (ventas_detalles INNER JOIN ventas ON ventas_detalles.idventa = ventas.idventa ) INNER JOIN direcciones ON ventas.idcliente = direcciones.iduser WHERE ventas_detalles.idventa = $idventa;";
+                $resultado2 = mysqli_query($conexion, $sqldir);
+                echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Dirección de Entrega</font></center></h1>";
+                echo "<table class='tabladis'>";
+                echo "<tr>
+                    <th>Calle</th>
+                    <th>Número Exterior</th>
+                    <th>Número Interior</th>
+                    <th>Colonia</th>
+                    <th>Municipio</th>
+                </tr>";
+                while ($fila2 = mysqli_fetch_assoc($resultado2)) {
+                  if($fila2['numint'] == "") {
+                      $numint = "N/A";
+                  } else {
+                      $numint = $fila2['numint'];
+                  }
+                    echo "<tr>";
+                    echo "<td>" . $fila2['calle'] . "</td>";
+                    echo "<td>" . $fila2['numext'] . "</td>";
+                    echo "<td>" . $numint . "</td>";
+                    echo "<td>" . $fila2['colonia'] . "</td>";
+                    echo "<td>" . $fila2['municipio'] . "</td>";
+                }
+                echo "</table>";
                 // Cerrar la conexión a la base de datos
                 mysqli_close($conexion);
                 break;

@@ -2,6 +2,16 @@
     session_start();
 
     require("../../database/connection.php");
+    if(isset($_SESSION['userid'])){
+        $sql = "SELECT iduser FROM direcciones WHERE iduser = $_SESSION[userid]";
+        $resultado = mysqli_query($conexion, $sql);
+        $userdirec =  mysqli_fetch_row($resultado);
+        if(!($userdirec == "")) {
+            $usertrue = implode("", $userdirec);
+        } else {
+            $usertrue = $userdirec;
+        }
+    }
 
     if(!isset($_SESSION['userid'])){
         header("Location: ../login.php?success=3");
@@ -10,6 +20,9 @@
         $i = $_GET['delete'];
         setcookie($i, "",time()-3600, "/");
         header("Location: ../productos.php");
+
+    } else if ($usertrue == "") {
+        header("Location: ../cliente/dashboardcliente.php?view=a");
 
     }
     

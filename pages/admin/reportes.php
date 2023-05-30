@@ -110,6 +110,56 @@
                         echo "</table>";
                     }
                     mysqli_close($conexion);
+                }else if($view == "mav"){
+                    echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Top Sellers</font></center></h1>";
+
+                    echo '<div style="text-align: center;">';
+                    echo '<form method="" action="">';
+
+                    $sql = "SELECT * FROM topsellers";
+                    $resultado = mysqli_query($conexion, $sql);
+             
+                    echo "<table class='tabladis' style='font-family: Century Gothic'>";
+                    echo "<tr>
+                        <th>ID Producto</th>
+                        <th>Nombre</th>
+                        <th>Cantidad Vendida</th>
+                    </tr>";
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
+                        echo "<tr>";
+                        echo "<td>" . $fila['ID'] . "</td>";
+                        echo "<td>" . $fila['Nombre'] . "</td>";
+                        echo "<td>" . $fila['Cantidad Vendida'] . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                } else {
+                    echo "<h1><center><font size= 6px  color='purple' face='Century Gothic'>Menos Vendidos</font></center></h1>";
+
+                    echo '<div style="text-align: center;">';
+                    echo '<form method="" action="">';
+
+                    $sql = "SELECT * FROM menosvendidos";
+                    $resultado = mysqli_query($conexion, $sql);
+
+                    echo "<table class='tabladis' style='font-family: Century Gothic'>";
+                    echo "<tr>
+                        <th>ID Producto</th>
+                        <th>Nombre</th>
+                        <th>Cantidad Vendida</th>
+                    </tr>";
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
+                        echo "<tr>";
+                        echo "<td>" . $fila['ID'] . "</td>";
+                        echo "<td>" . $fila['Nombre'] . "</td>";
+                        echo "<td>" . $fila['Cantidad Vendida'] . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
                 }
             ?>
         </div>

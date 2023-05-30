@@ -1,7 +1,11 @@
 <?php 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    
     session_start();
     include("../topmenu.php");
-    
+
     if(isset($_SESSION['rol'])) {
         include('modal.php');
     }
@@ -9,22 +13,37 @@
 
 <?php
 if(isset($_POST['submit'])){
-    $to = "tucorreo@example.com"; //Correo al que se enviará el mensaje
     $name = $_POST['nomcom'];
-    $email = $_POST['nomus'];
+    $email = $_POST['mail'];
     $message = $_POST['msj'];
 
-    $headers = "From: ".$name." <".$email.">\r\n";
-    $headers .= "Reply-To: ".$email."\r\n";
-    $headers .= "CC: tucorreo@example.com\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    require('../phpmailer/src/Exception.php');
+    require('../phpmailer/src/PHPMailer.php');
+    require('../phpmailer/src/SMTP.php');
+    $phpmailer = new PHPMailer();
+    $phpmailer -> isSMTP();
+    $phpmailer -> Mailer="smtp";
+    $phpmailer -> SMTPAuth = true;
+    $phpmailer->SMTPSecure = "tls";
+    $phpmailer->Port       = 587;
+    $phpmailer->Host       = "smtp-mail.outlook.com";
+    $phpmailer->Username   = "sbs_no_reply@outlook.com";
+    $phpmailer->Password   = "1234567890ABC";
+    $phpmailer->CharSet = "UTF-8";
+    $phpmailer->Encoding = 'base64';
+    $phpmailer->SetFrom("sbs_no_reply@outlook.com", $name);
+
+    $phpmailer -> IsHTML(true);
+    $phpmailer -> AddAddress("sbs_no_reply@outlook.com","sbs_no_reply@outlook.com");
+    $phpmailer -> Subject = ("Mensaje de SBS de ".$name);
 
     $body = "Has recibido un nuevo mensaje de contacto:<br><br>";
     $body .= "<strong>Nombre:</strong> ".$name."<br>";
     $body .= "<strong>Correo:</strong> ".$email."<br>";
     $body .= "<strong>Mensaje:</strong> ".$message."<br>";
-    mail($to, $message , $body, $headers);       
+    $phpmailer -> Body = $body;
+    $phpmailer -> send();
+    $phpmailer -> smtpClose();
 }
 ?>
     <section class="portada contactform"> <!-- Sección de la imagen de portada -->
@@ -38,8 +57,8 @@ if(isset($_POST['submit'])){
                                 <input type="text" placeholder="Ingrese su nombre completo" name="nomcom" required>
                             </div>
                             <div class="input-box">
-                                <span class="details">Usuario</span>
-                                <input type="text" placeholder="Ingrese su nombre de usuario" name="nomus" required>
+                                <span class="details">Correo Electronico</span>
+                                <input type="text" placeholder="Ingrese su correo electronico" name="mail" required>
                             </div>
                             <div class="input-box">
                                 <span class="details">Mensaje</span>

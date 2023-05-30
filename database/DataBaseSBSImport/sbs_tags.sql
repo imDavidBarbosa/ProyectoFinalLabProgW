@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `roll`
+-- Table structure for table `tags`
 --
 
-DROP TABLE IF EXISTS `roll`;
+DROP TABLE IF EXISTS `tags`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `roll` (
-  `idroll` int NOT NULL AUTO_INCREMENT,
-  `roll` varchar(20) NOT NULL,
-  PRIMARY KEY (`idroll`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tags` (
+  `idtags` int NOT NULL,
+  `nombre_tag` varchar(100) NOT NULL,
+  PRIMARY KEY (`idtags`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `roll`
+-- Dumping data for table `tags`
 --
 
-LOCK TABLES `roll` WRITE;
-/*!40000 ALTER TABLE `roll` DISABLE KEYS */;
-INSERT INTO `roll` VALUES (1,'Administrador'),(2,'Cliente');
-/*!40000 ALTER TABLE `roll` ENABLE KEYS */;
+LOCK TABLES `tags` WRITE;
+/*!40000 ALTER TABLE `tags` DISABLE KEYS */;
+INSERT INTO `tags` VALUES (1,'rojo'),(2,'labial'),(3,'crema'),(4,'manos'),(5,'negro'),(6,'delineador'),(7,'ojos'),(8,'balsamo'),(9,'antiarrugas'),(10,'yves rocher'),(11,'gel'),(12,'ducha'),(13,'baÃ±o'),(14,'vainilla'),(15,'maracuya'),(16,'jengibre'),(17,'coco'),(18,'lavanda'),(19,'mora'),(20,'argÃ¡n'),(21,'pÃ©talos de rosa'),(22,'monoi'),(23,'aceite'),(24,'cuerpo'),(25,'corporal'),(26,'rosas'),(27,'esencia'),(28,'magnolia'),(29,'oliva'),(30,'vitamina e'),(31,'almendra'),(32,'lociÃ³n'),(33,'humectante'),(34,'cereza'),(35,'jafra');
+/*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-29 18:45:46
+-- Dump completed on 2023-05-29 18:46:16

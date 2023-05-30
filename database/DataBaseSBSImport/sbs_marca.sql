@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `roll`
+-- Table structure for table `marca`
 --
 
-DROP TABLE IF EXISTS `roll`;
+DROP TABLE IF EXISTS `marca`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `roll` (
-  `idroll` int NOT NULL AUTO_INCREMENT,
-  `roll` varchar(20) NOT NULL,
-  PRIMARY KEY (`idroll`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `marca` (
+  `idmarca` int NOT NULL,
+  `nomb_marca` varchar(100) NOT NULL,
+  PRIMARY KEY (`idmarca`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `roll`
+-- Dumping data for table `marca`
 --
 
-LOCK TABLES `roll` WRITE;
-/*!40000 ALTER TABLE `roll` DISABLE KEYS */;
-INSERT INTO `roll` VALUES (1,'Administrador'),(2,'Cliente');
-/*!40000 ALTER TABLE `roll` ENABLE KEYS */;
+LOCK TABLES `marca` WRITE;
+/*!40000 ALTER TABLE `marca` DISABLE KEYS */;
+INSERT INTO `marca` VALUES (1,'JAFRA'),(2,'Yves Rocher');
+/*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-29 18:45:46
+-- Dump completed on 2023-05-29 18:43:11

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: sbs
+-- Host: 127.0.0.1    Database: sbsrenew
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -24,19 +24,15 @@ DROP TABLE IF EXISTS `ventas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ventas` (
   `idventa` int NOT NULL AUTO_INCREMENT,
-  `estatus` varchar(100) NOT NULL,
-  `nombre_prod` varchar(100) NOT NULL,
-  `cantidad` int NOT NULL,
-  `total` int NOT NULL,
   `fecha` date NOT NULL,
-  `idproducto` int NOT NULL,
   `idcliente` int NOT NULL,
+  `idestatus` int NOT NULL,
   PRIMARY KEY (`idventa`),
-  KEY `idproducto` (`idproducto`),
   KEY `idcliente` (`idcliente`),
-  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `productos` (`id`),
+  KEY `ventas_ibfk_1_idx` (`idestatus`),
+  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idestatus`) REFERENCES `estatus` (`idestatus`),
   CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`idcliente`) REFERENCES `usuarios` (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +41,7 @@ CREATE TABLE `ventas` (
 
 LOCK TABLES `ventas` WRITE;
 /*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+INSERT INTO `ventas` VALUES (3,'2023-05-24',12,1),(4,'2023-05-24',13,1),(5,'2023-05-24',13,1),(6,'2023-05-24',13,1),(7,'2023-05-24',13,1),(8,'2023-05-24',13,1),(9,'2023-05-24',13,1),(10,'2023-05-24',13,1),(11,'2023-05-24',13,1),(12,'2023-05-24',13,1),(13,'2023-05-24',13,1),(14,'2023-05-24',13,1),(15,'2023-05-24',13,1),(16,'2023-05-24',13,1),(17,'2023-05-25',13,1),(18,'2023-05-25',13,1),(19,'2023-05-25',13,1),(20,'2023-05-25',13,1),(21,'2023-05-25',13,1),(22,'2023-05-25',13,1),(23,'2023-05-25',13,1),(24,'2023-05-25',13,1),(25,'2023-05-25',13,1),(26,'2023-05-25',13,1),(27,'2023-05-25',13,1),(28,'2023-05-25',13,1),(29,'2023-05-25',13,1),(30,'2023-05-25',13,1),(31,'2023-05-25',13,1),(32,'2023-05-25',13,1),(33,'2023-05-25',17,1),(34,'2023-05-25',17,1),(35,'2023-05-25',13,1),(36,'2023-05-25',13,1),(37,'2023-05-25',13,1),(38,'2023-05-25',13,1),(39,'2023-05-25',13,1),(40,'2023-05-25',13,1),(41,'2023-05-25',17,1);
 /*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-07 10:51:58
+-- Dump completed on 2023-05-29 18:47:28

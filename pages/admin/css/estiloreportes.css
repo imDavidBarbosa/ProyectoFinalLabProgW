@@ -1,0 +1,106 @@
+form {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f7f7f7;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="date"] {
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	font-family: "Century Gothic", sans-serif;
+	font-size: 15px;
+}
+
+label.esp {
+	display: block;
+	margin-bottom: 5px;
+}
+
+button[type="submit"] {
+    text-align: center;
+	background-color: rgb(187, 143, 206);
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: "Century Gothic", sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+button[type="submit"]:hover {
+	background-color: #a770a3;
+}
+
+button[type="submit"]:active {
+	background-color: purple;
+	transform: translateY(1px);
+}
+
+form {
+    font-family: "Century Gothic", sans-serif;
+}
+
+button.center {
+    margin: auto;
+    display: block;
+}
+
+.enlace-final {
+    background-color: rgb(187, 143, 206);
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enlace-final:hover {
+    background-color: #a770a3;
+}
+
+form.vSel {
+    display: flex;
+    width: 900px;
+    margin: auto;
+    padding: 0 95px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+	background-color: white;
+	border: none;
+}
+
+form.vSel button.selector {
+    width: 200px;
+	color: black;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+	transform: translateY(0px);
+}
+
+form.vSel button.selector.on {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}

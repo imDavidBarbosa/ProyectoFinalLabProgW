@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $to = "tucorreo@example.com"; //Correo al que se enviará el mensaje
     $name = $_POST['nomcom'];
     $email = $_POST['nomus'];
-    $message = $_POST['email'];
+    $message = $_POST['msj'];
 
     $headers = "From: ".$name." <".$email.">\r\n";
     $headers .= "Reply-To: ".$email."\r\n";
@@ -38,12 +38,12 @@ if(isset($_POST['submit'])){
                                 <input type="text" placeholder="Ingrese su nombre completo" name="nomcom" required>
                             </div>
                             <div class="input-box">
-                                <span class="details">Correo</span>
+                                <span class="details">Usuario</span>
                                 <input type="text" placeholder="Ingrese su nombre de usuario" name="nomus" required>
                             </div>
                             <div class="input-box">
                                 <span class="details">Mensaje</span>
-                                <textarea type="text" cols=10 placeholder="Ingrese su email" name="email" required></textarea>
+                                <textarea type="text" cols=10 placeholder="Ingrese su mensaje" name="msj" required></textarea>
                             </div>
                         </div>
                         <div class="button">

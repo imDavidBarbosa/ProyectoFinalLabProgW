@@ -106,7 +106,7 @@
                         echo '<input class="empty" type="text" name="numint" >';
                         echo '</div>';
                         echo '<div class="input-box">';
-                        echo '<label class="details" for="col">Marca:</label>';
+                        echo '<label class="details" for="col">Colonia</label>';
                         echo "<select name='col' id='col'>";
                         echo "<option value='Misión de Fundadores'>Misión de Fundadores</option>";
                         echo "<option value='Valle de San Andrés'>Valle de San Andrés</option>";

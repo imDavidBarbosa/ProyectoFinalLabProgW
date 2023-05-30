@@ -92,10 +92,7 @@
             <div class="socialmedia">
                 <div id="marker_social"></div>
                 <?php 
-                    if ($ap == "inicio.php" && isset($_SESSION['rol'])) {
-                        echo '<i data-toggle="modal" data-target="#exampleModal" class="fas fa-shopping-cart"></i>';
-                        echo '<i class="fa-brands fa-whatsapp" onclick="whatsapps()"></i>';
-                    } else if ($ap != "inicio.php" && isset($_SESSION['rol'])) {
+                    if ($ap != "inicio.php" && isset($_SESSION['rol'])) {
                         echo '<i data-toggle="modal" data-target="#exampleModal" class="fas fa-shopping-cart"></i>';
                         echo '<i class="fa-brands fa-whatsapp" onclick="whatsapps()"></i>';
                     } else {

@@ -22,6 +22,7 @@
             $total = 0;
             if(isset($_SESSION['carritoprods'])) {
               while ($counter <= $_SESSION['carritoprods']) {
+                $habilitarBoton = false;
                 if(isset($_COOKIE["$counter"])) {
                   $prods = unserialize($_COOKIE["$counter"]);
                   $sql7 = ("SELECT * FROM productos INNER JOIN marca WHERE id = $prods[0]");
@@ -54,11 +55,13 @@
                 echo "<tr>";
                 echo "<td class='total' colspan='6'>No hay productos en su carrito</td>";
                 echo "</td>";
+                $habilitarBoton = true;
               }
             } else {
               echo "<tr>";
               echo "<td class='total' colspan='6'>No hay productos en su carrito</td>";
               echo "</td>";
+              $habilitarBoton = true;
             }
             echo "<tr class='lastrow'>";
             echo "<td></td>";
@@ -73,8 +76,21 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" onclick="buy()">Realizar pedido</button>
+        <button type="button" class="btn btn-primary" id="pedidoBtn" disabled onclick="buy()">Realizar pedido</button> 
       </div>
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtener referencia al botón
+    var pedidoBtn = document.getElementById("pedidoBtn");
+
+    // Verificar si se habilita el botón
+    var habilitarBoton = <?php echo $habilitarBoton ? 'false' : 'true'; ?>;
+    if (habilitarBoton) {
+      pedidoBtn.disabled = false; // Habilitar el botón
+    }
+  });
+
+</script>

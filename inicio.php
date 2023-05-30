@@ -15,13 +15,28 @@
         </div>
     </section>
     <section class="sec1">
+        <?php //Conexión a Base de Datos para mostrar los productos
+            require("database/connection.php");
+            $sql2 = ("SELECT * FROM productos");
+            $query2 = mysqli_query($conexion, $sql2);
+        ?>
         <div class="contenedor">
             <h2><span>TODO LO QUE NECESITAS</span></h2> <!-- Subtítulo 1 -->
         </div>
         <div class="hero">
             <div class="carousel">
                 <ul>
-                
+                    <!--Fotos de carrusel/galería -->
+                    <!--Se busca mostrar los productos más vendidos
+                    de forma automática a través de una vista creada en la
+                    base de datos -->
+                    <?php 
+                    $sqltop = ("SELECT topsellers.ID, img, topsellers.nombre FROM topsellers INNER JOIN productos ON topsellers.ID = productos.id;");
+                    $querytop = mysqli_query($conexion, $sqltop);
+                    while($topventas = mysqli_fetch_assoc($querytop)) {
+                        echo "<li><a class='topventas' href='pages/overview.php?idprod=$topventas[ID]'><img src='media/img/productos/$topventas[img]'><p>$topventas[nombre]</p></a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
